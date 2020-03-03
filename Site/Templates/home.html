@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+		<link rel = "stylesheet" type = "text/css" href = "static/ourstyle.css">        
+		<title>Home</title>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="navbar"> <!--table that displays the navbar-->
+				<table>
+					<tbody>
+						<tr> 
+							<td class="menulineright">                  
+								<p class="topmenu"><a href="renting">Booking</a></p>                  
+							</td>
+							<td class="menulineright">                 
+								<p class="topmenu"><a href="review">Reviews</a></p>                  
+							</td>
+							<td class="menulineright">                   
+								<p class="topmenu"><a href="#gallery">Gallery</a></p>                  
+							</td>
+							<td class="menulineright">                   
+								<p class="topmenu"><a href="#map">Location</a></p>                 
+							</td>
+							<td class="menulineright" >                   
+								<p class="topmenu"><a href="#prices">Prices</a></p>                  
+							</td>
+							<td>                  
+								<p class="topmenu"><a href="#contactus">Contact Us</a></p>                  
+							</td>
+						</tr>              
+					</tbody>
+				</table>            
+			</div>
+			<br class="floatClear"> 
+		</div>
+		
+		<div class="center">
+			<h1> Stunning Waterside Cottage in Wrexham</h1>			
+        </div>
+        <!-- This is our gallery -->
+		<div class="gallery center">
+			<h3>Gallery</h3>
+			<div class="thumbnails">
+                <img onmouseover="preview.src=img1.src" id="img1" src="static/images/pic1.jpg" alt="" />
+                <img onmouseover="preview.src=img2.src" id="img2" src="static/images/pic2.jpg" alt="" />
+                <img onmouseover="preview.src=img3.src" id="img3" src="static/images/pic3.jpg" alt="" />
+                <img onmouseover="preview.src=img4.src" id="img4" src="static/images/pic4.jpg" alt="" />
+                <img onmouseover="preview.src=img5.src" id="img5" src="static/images/pic5.jpg" alt="" />
+                <img onmouseover="preview.src=img6.src" id="img6" src="static/images/pic6.jpg" alt="" />
+                <img onmouseover="preview.src=img7.src" id="img7" src="static/images/pic7.jpg" alt="" />
+			</div>            
+			<div class="preview center">
+				<img id="preview" src="static/images/pic1.jpg" alt="" />
+			</div>
+        </div>
+		
+        <div id = "houseinformation" class="center">
+            <h2>The Cottage: </h2>
+            <p>A beautiful 2 bedroom cottage with incredible views of the Norfolk Broads. With many local shops and attractions, what's more to love?
+               Free parking comes as standard alongside a private mooring just for your use.</p>
+            <p>The Cottage includes: </p>
+            <ul>
+                <li>2 bedrooms</li>
+                <li>3 beds</li>
+                <li>1 bath</li>
+                <li>Freeview TV</li>
+                <li>bed linen and towels</li>
+                <li>new cutlery and cooking appliances</li>
+            </ul>  
+        </div>
+        
+        <div id = "areainformation" class="center">
+            <h2>The Area: </h2>
+            <p>The cottage is located in the capital of the broads: Wroxham. This is the perfect place for exploring the gorgeous waterways comprising
+               the broads. It is also just over 5 miles away from the fine city of Norwich, making it the perfect land and sea exploration post.</p>
+            <a href = "attractions"> Click hear to view local attractions. </a><br>
+        </div>
+		
+        <!-- This is our embedded map using bing. It shows the location of the property -->
+        <div id="map" class="center">
+            <iframe width="325" height="280" src="https://www.bing.com/maps/embed?h=280&w=325&cp=52.71078745390384~1.4063444292385485&lvl=15&typ=d&sty=r&src=SHELL&FORM=MBEDV8">
+            </iframe>
+            <div style="white-space: nowrap; width: 325px; padding: 6px 0;" class="center">
+                <a id="largeMapLink" target="_blank" href="https://www.bing.com/maps?cp=52.71078745390384~1.4063444292385485&amp;sty=r&amp;lvl=15&amp;FORM=MBEDLD">View Larger Map</a> 
+                <a id="dirMapLink" target="_blank" href="https://www.bing.com/maps/directions?cp=52.71078745390384~1.4063444292385485&amp;sty=r&amp;lvl=15&amp;rtp=~pos.52.71078745390384_1.4063444292385485____&amp;FORM=MBEDLD">Get Directions</a>
+            </div>
+        </div>
+		
+        <div id="prices" class="center">
+            <h2>Prices</h2>
+            <p>Peak Times: July,August and September</p>
+            <p>Peak pricing: £70 a night</p>
+            <p>Off-Peak: £50 a night</p><br>
+        </div>
+		
+        <div id="contactus" class="center">
+            <h2>Contact Us</h2>
+            <p>Phone: 0123456789</p>
+            <p>Email: House.Renting@uea.ac.uk</p>            
+        </div>
+
+    <footer>
+        <a href="/admin">Admin</a><br><!--Link to admin page becuase we didnt know where else to put it-->
+		<p>Last edit: 16/11/2018</p>
+        <a id="org" href="https://www.airbnb.co.uk/rooms/22843672?location=Norwich&adults=1&children=0&infants=0&guests=1&check_in=2018-12-01&check_out=2018-12-08&s=2CHXFo2k">Original</a>
+	</footer>
+    </body>
+</html>

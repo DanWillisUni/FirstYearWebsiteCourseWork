@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+		<link rel = "stylesheet" type = "text/css" href = "static/ourstyle.css">
+		<title>Admin</title>
+	</head>
+	<body>
+		<div class="center">
+			<header>
+				<h1>Admin</h1>
+			</header>
+			<!--Main table that displays the information for the admin-->
+			<table>
+				<tr>
+					<td>
+						<h2>Arrival</h2>
+					</td>
+					<td>
+						<h2>Departure</h2>
+					</td>
+					<td>
+						<h2>Name</h2>
+					</td>
+					<td>
+						<h2>Email</h2>
+					</td>
+					<td>
+						<h2>Confirmation Status</h2>
+					</td>
+				</tr>
+				<!-- Below is Jinja which is part of Flask. It is required to show the bookings -->
+				{% for line in aList %}
+				<tr>
+					{% for item in line%}
+					<td>
+						{{item}}
+					</td>
+					{% endfor %}
+				</tr>
+				{% endfor %}
+			</table>
+			<div id="addConfirmation" class="center">
+				<h2> Confirmation </h2>
+				<!--The booking confirmation form-->
+				<form action = "confirmation" method = "get">
+					<p>Email: </p> <input type = "text" name = "email"><br>
+					<input type = "submit" value = "Go"/>
+				</form>
+			</div>
+			<a href="/">Home</a>
+		</div>
+		<footer>
+			<a href="/logout">Logout</a><br>
+			<p>Last edit: 16/11/2018</p>
+		</footer>
+	</body>	
+</html>

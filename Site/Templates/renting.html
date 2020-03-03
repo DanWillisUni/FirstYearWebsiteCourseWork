@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>    
+       <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+	   <link rel = "stylesheet" type = "text/css" href = "static/ourstyle.css">
+	   <script src="static/ourscript.js"></script>
+       <title>Renting</title>		
+    </head>
+	<body>
+		<div id="wrapper">
+			<div id="navbar"><!--navbar table-->				
+				<table>
+					<tbody>              
+						<tr>
+							<td class="menulineright">                 
+								<p class="topmenu"><a href="/">Home</a></p>                  
+							</td>                        
+							<td class="menulineright">                 
+								<p class="topmenu"><a href="review">Reviews</a></p>                  
+							</td>
+							<td class="menulineright">                 
+								<p class="topmenu"><a href="#addBooking">Add Booking</a></p>                  
+							</td>                        
+						</tr>              
+					</tbody>
+				</table>            
+			</div>
+			<br class="floatClear"> 
+		</div>
+		<div id="bookings" class="center">
+			<h1>Bookings</h1>
+			<table>
+				<tr>
+					<td>
+						<h2>Arrival</h2>
+					</td>	
+					<td>
+						<h2>Departure</h2>
+					</td>
+					<td>
+						<h2>Confirmation</h2>
+					</td>
+				</tr>
+				<!-- Below is Jinja which is part of Flask. It is required to show the bookings -->
+				{% for line in aList %}
+				<tr>
+					{% for item in line%}
+					<td>
+						{{item}}
+					</td>
+					{% endfor %}
+				</tr>
+				{% endfor %}
+			</table><br>
+		</div>
+		<script>displayCalender()</script>
+		<div id="msg" class="center">
+			<!-- Below is Jinja which is part of Flask. We're using it to send the user alerts about their requests -->
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					<ul class=flashes>
+						{% for message in messages %}
+							<li>{{ message }}</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+			{% endwith %}
+		</div>
+        <div id="addBooking" class="center">
+            <h2> Add Booking </h2>
+            <form action = "addBooking" method = "get">
+                <p>Arrival </p> <input type = "date" name = "arrival"><br>
+                <p>Departure:</p> <input type = "date" name = "departure"><br>
+                <p>Name:</p> <input type = "text" name = "name"><br>
+                <p>Email:</p> <input type = "text" name = "email"><br>
+                <input type = "submit" value = "Go"/>
+            </form>
+        </div>		
+	</body>
+</html>

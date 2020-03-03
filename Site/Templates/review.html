@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang = "en">  
+	<head>    
+		<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+		<link rel = "stylesheet" type = "text/css" href = "static/ourstyle.css">
+		<title>Review</title>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="navbar"><!--NavBar-->
+				<table>
+                    <tbody>              
+                        <tr>
+                            <td class="menulineright">                 
+                                <p class="topmenu"><a href="/">Home</a></p>                  
+                            </td>                     
+                            <td class="menulineright">                  
+                                <p class="topmenu"><a href="renting">Booking</a></p>                  
+                            </td>
+                            <td class="menulineright">                 
+                                <p class="topmenu"><a href="#addReview">Add Reviews</a></p>                  
+                            </td>                        
+                        </tr>              
+                    </tbody>
+                </table>            
+			</div>
+			<br class="floatClear"> 
+		</div>
+		<div class="center">
+		<h1>Reviews</h1>
+		</div>
+		<table>
+			<tr>
+				<td>
+					<h2>Name</h2>
+				</td>
+				<td>
+					<h2>Quote</h2>
+				</td>
+				<td>
+					<h2>Date</h2>
+				</td>
+			</tr>
+			<!-- Below is Jinja which is part of Flask. It is required to show the reviews -->
+			{% for line in aList %}
+			<tr>
+				{% for item in line%}
+				<td>
+					{{item}}
+				</td>
+				{% endfor %}
+			</tr>
+			{% endfor %}
+		</table>
+        <div id="addReview" class="center">
+			<h3> Add Review</h3>
+			<form action = "addReview" method = "get"><!--add review form for the name and comment-->
+				<p>Name: </p><input type = "text" name = "name"><br>
+				<p>Comment: </p><input type = "text" name = "comment"><br>
+				<input type = "submit" value = "Go"/>
+			</form>
+		</div>
+	</body>
+</html>
